@@ -13,8 +13,19 @@ with adapted pointer-generator networks
 
 
 ## Usage
-- - -
-* Pretrain(for type Person):   
+
+Step 1. Randomly split the data into train, dev and test by runing split.py under utils folder:
+
+```
+python split.py
+```
+
+Step 2. Run preprocess.py under the same folder. You can choose person (type 0) or animal (type 1):
+```
+python preprocess.py --type 0
+```
+Step 3. Pretrain (for type Person): 
+```  
 python main.py --cuda --mode 0 --type 0 
-- - -
+```
 
