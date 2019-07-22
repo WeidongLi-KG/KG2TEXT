@@ -22,10 +22,10 @@ python split.py
 
 Step 2. Run preprocess.py under the same folder. You can choose person (type 0) or animal (type 1):
 ```
-python preprocess.py --type 0
+python preprocess.py --type 1
 ```
-Step 3. Pretrain (for type Person): 
+Step 3. Pretrain (for type Animal): 
 ```  
-python main.py --cuda --mode 0 --type 0 
+python main.py --cuda --mode 0 --type 1
 ```
 
