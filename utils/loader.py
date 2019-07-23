@@ -126,9 +126,9 @@ class Table2text_seq:
             else:
                 path = "test_A.pkl"
         if self.mode == 0:
-            self.data = self.load_data(path)[:3000]
+            self.data = self.load_data(path)
         else:
-            self.data = self.load_data(path)[:300]
+            self.data = self.load_data(path)
         self.len = len(self.data)
         self.save2txt(path, self.data)
         self.corpus = self.batchfy()
