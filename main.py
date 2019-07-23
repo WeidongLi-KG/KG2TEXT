@@ -52,7 +52,7 @@ parser.add_argument('--save', type=str,  default='params.pkl',
                     help='path to save the final model')
 parser.add_argument('--mode', type=int,  default=0,
                     help='train(0)/predict_individual(1)/predict_file(2)/compute score(3) or keep train (4)')
-parser.add_argument('--type', type=int,  default=0,
+parser.add_argument('--type', type=int,  default=1,
                     help='person(0)/animal(1)')
 parser.add_argument('--mask', type=int,  default=0,
                     help='false(0)/true(1)')
@@ -181,7 +181,7 @@ if __name__ == "__main__":
             results = []
             res_path = './result'
             if not os.path.exists(res_path): os.makedirs(res_path)
-            file_name = res_path+'/result_3000_'+ datetime.now().strftime('%Y-%m-%d_%H-%M-%S')+ '.csv'
+            file_name = res_path+'/result_'+ datetime.now().strftime('%Y-%m-%d_%H-%M-%S')+ '.csv'
             train_epoches(t_dataset, v_dataset, model, config.epochs, 1)
         except KeyboardInterrupt:
             print('-' * 89)
@@ -268,4 +268,4 @@ if __name__ == "__main__":
         if x == '1':
             torch.save(model.state_dict(), args.save)
             print("model saved")
-# python main.py --cuda --mode 0 --type 0
+# python main.py --cuda --mode 0 --type 1
